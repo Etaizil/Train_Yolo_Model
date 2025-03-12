@@ -94,9 +94,11 @@ elif source_type == "folder":
         if os.path.splitext(f)[1] in img_ext_list
     ]
 elif source_type in ["video", "usb", "laptop"]:
-    cap = cv2.VideoCapture(
-        cam_idx if source_type in ["usb", "laptop"] else img_source, cv2.CAP_DSHOW
-    )
+    if source_type in ["usb", "laptop"]:
+        cap = cv2.VideoCapture(cam_idx, cv2.CAP_DSHOW)
+    else:
+        cap = cv2.VideoCapture(img_source)
+
     cap.set(cv2.CAP_PROP_FPS, 60)
     cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
 
@@ -220,12 +222,12 @@ try:
         if record:
             recorder.write(frame)
 
-        key = cv2.waitKey(5 if source_type in ["video", "usb", "laptop"] else 0)
+        key = cv2.waitKey(2 if source_type in ["video", "usb", "laptop"] else 0)
         if key in [ord("q"), ord("Q")]:
             break
 
-except Exception as _:
-    print(f"ERROR")
+except Exception as e:
+    print(f"ERROR: {e}")
 
 # ==============================================================================
 #                             SAVING STATS AND CLEANUP
