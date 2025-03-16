@@ -29,6 +29,12 @@ After training, the model is used to:
 The project includes a visualization component:
 - A script (`view_stats.py`) reads the CSV file and generates a pie chart that shows the distribution of expressions over all sessions.
 
+### **Train With Google Colab**
+Click below to open the Colab notebook and start training a YOLO model. This makes it easy to upload an image dataset and run a few blocks of code to get started.
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1yhe0rB06BqVWp_Wwl4osySTcAR1GuXjG?usp=sharing)
+
+
 ## Project Structure
 
 - **`yolo_detect.py`**: The main script for running object detection using the trained YOLO model. It loads the model, processes input sources (images, videos, or live camera streams), performs detection, counts and saves the detection statistics.
