@@ -63,12 +63,17 @@ For NVIDIA GPU users, install the GPU-accelerated version of PyTorch:
 pip install --upgrade torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 ```
 
-3. Extract the trained model
+### 3. Extract the trained model
 Unzip ```my_model.zip``` and navigate into it's folder:
 ```bash
 cd path/to/folder
 ```
-4. Download and run yolo_detect.py
+#### 3.1. Download my model
+If you want to, you may download my trained model and run it.
+
+Simply click ```my_model.pt``` -> Download raw file.
+
+### 4. Download and run yolo_detect.py
 Download the detection script:
 
 ```bash
