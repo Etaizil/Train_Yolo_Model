@@ -1,6 +1,6 @@
 # Train Yolo Model
 
-This project explores training and using a YOLO (You Only Look Once) model for object detection, focusing on classifying facial expressions from a custom dataset. To create a more personalized dataset, I captured and labeled around 1500 images of my own facial expressions using Label Studio. It was more of a personal, self-tailored project rather than something meant for broader use, but it was a great way to learn and get familiar with YOLO in a practical setting.
+This project explores training and using a YOLO (You Only Look Once) model for object detection, focusing on classifying facial expressions from a custom dataset. To create a more personalized dataset, I captured and labeled around 1500 images of my own facial expressions using Label Studio. It was more of a personal, self-tailored project rather than something meant for broader use, and it was a great way to learn and get familiar with YOLO in a practical setting. This file will discuss mostly about 'facial expressions', but it can be derived to any other labeling idea.
 
 ## Project Overview
 
@@ -15,7 +15,7 @@ While many pre-labeled datasets are available online, I chose to take my own pic
 The training process involves:
 - Preparing the custom dataset with labeled images.
 - Configuring the YOLO model with appropriate parameters.
-- Training the model using the YOLO framework to detect and classify facial expressions.
+- Training the model using the YOLO framework to detect and classify the facial expressions.
 
 ### 3. Object Detection & Statistics Collection
 
@@ -69,7 +69,7 @@ Unzip ```my_model.zip``` and navigate into it's folder:
 cd path/to/folder
 ```
 #### 3.1. Download my model
-If you want to, you may download my trained model and run it.
+If you want to, you may download my face expressions trained model and run it.
 
 Simply click ```my_model.pt``` -> Download raw file.
 
@@ -97,7 +97,7 @@ python yolo_detect.py --model my_model.pt --source path/to/image_or_video.mp4
 ## Inspiration & Future Improvements
 
 This project was partly inspired by the ideas and techniques presented in this [YouTube video](https://www.youtube.com/watch?v=r0RspiLG260), which provided valuable guidance as I developed my workflow.  
-While the project is currently a proof-of-concept, there are plenty of improvements that can be made:
+While the project is currently a proof-of-concept for myself, plenty of improvements can be made:
 - **Scaling Up:** Manual labeling of large datasets is time-consuming. Integrating semi-automated labeling tools could make this process more efficient.
 - **Model Enhancements:** I only did a single training run for this project. Further tuning of the YOLO model and experimenting with different architectures could improve detection accuracy.
 - **Extended Datasets:** Combining my custom dataset with pre-existing datasets might boost the model's performance and generalizability.
