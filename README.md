@@ -21,7 +21,7 @@ The training process involves:
 
 After training, the model is used to:
 - Detect face expressions in webcam, images and videos.
-- Count the number of detections for each expression - in each session.
+- Count the number of detections for each expression in each session.
 - Save these session statistics to a CSV file (`face_expression_stats.csv`) for further analysis.
 
 ### 4. Visualizing the Results
@@ -64,14 +64,14 @@ pip install --upgrade torch torchvision torchaudio --index-url https://download.
 ```
 
 ### 3. Extract the trained model
-Unzip ```my_model.zip``` and navigate into it's folder:
+Unzip ```my_model.zip``` and navigate into its folder:
 ```bash
 cd path/to/folder
 ```
 #### 3.1. Download my model
 If you want to, you may download my face expressions trained model and run it.
 
-Simply click ```my_model.pt``` -> Download raw file.
+Simply click ```my_model.pt``` and select 'Download raw file'.
 
 ### 4. Download and run yolo_detect.py
 Download the detection script:
@@ -80,7 +80,7 @@ Download the detection script:
 curl -o yolo_detect.py https://raw.githubusercontent.com/Etaizil/Train_Yolo_Model/refs/heads/main/yolo_detect.py
 ```
 
-Run inference with a yolov8n model on a laptop or USB camera at 1280x720 resolution:
+Run inference with a YOLOv8n model on a laptop or USB camera at 1280x720 resolution:
 
 ```bash
 python yolo_detect.py --model my_model.pt --source laptop0 --resolution 720x720
@@ -97,7 +97,7 @@ python yolo_detect.py --model my_model.pt --source path/to/image_or_video.mp4
 ## Inspiration & Future Improvements
 
 This project was partly inspired by the ideas and techniques presented in this [YouTube video](https://www.youtube.com/watch?v=r0RspiLG260), which provided valuable guidance as I developed my workflow.  
-While the project is currently a proof-of-concept for myself, plenty of improvements can be made:
+While the project is currently a proof-of-concept for myself, there are plenty of opportunities for improvement:
 - **Scaling Up:** Manual labeling of large datasets is time-consuming. Integrating semi-automated labeling tools could make this process more efficient.
 - **Model Enhancements:** I only did a single training run for this project. Further tuning of the YOLO model and experimenting with different architectures could improve detection accuracy.
 - **Extended Datasets:** Combining my custom dataset with pre-existing datasets might boost the model's performance and generalizability.
