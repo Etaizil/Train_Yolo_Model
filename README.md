@@ -77,11 +77,10 @@ Open **Anaconda Prompt** (or a terminal on macOS/Linux) and create a new Python 
 conda create --name yolo_env python=3.X -y # Replace 3.X with your python version
 conda activate yolo_env
 ```
-
-Then, install Ultralytics:
+Once inside the Conda environment, install the necessary Python packages:
 
 ```bash
-pip install ultralytics
+pip install ultralytics opencv-python pandas matplotlib numpy
 ```
 
 For NVIDIA GPU users, install the GPU-accelerated version of PyTorch:
