@@ -32,7 +32,7 @@ The project includes a visualization component:
 ### **Train With Google Colab**
 Click below to open the Colab notebook and start training a YOLO model. This makes it easy to upload an image dataset and run a few blocks of code to get started.
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1yhe0rB06BqVWp_Wwl4osySTcAR1GuXjG?usp=sharing)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1QEWZK5emoj3fvD9SPrjAeCRPV5COxCy7?usp=sharing)
 
 
 ## Project Structure
