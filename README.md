@@ -1,6 +1,6 @@
 # Train Yolo Model
 
-This project explores training and using a YOLO (You Only Look Once) model for object detection, focusing on classifying facial expressions from a custom dataset. To create a more personalized dataset, I captured and labeled around 1500 images of my own facial expressions using Label Studio. It was more of a personal, self-tailored project rather than something meant for broader use, and it was a great way to learn and get familiar with YOLO in a practical setting. This file will discuss mostly about 'facial expressions', but it can be derived to any other labeling idea.
+This project explores training and using a YOLO (You Only Look Once) model for object detection, focusing on classifying facial expressions from a custom dataset. To create a more personalized dataset, I captured and labeled around 1500 images of my own facial expressions using Label Studio. It was more of a personal, self-tailored project, and it was a great way to learn and get familiar with YOLO in a practical setting. This file will discuss mostly about 'facial expressions', but it can be derived to any other labeling idea.
 
 ## Table of Contents
 - [Project Overview](#project-overview)
