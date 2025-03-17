@@ -1,6 +1,6 @@
 # Train Yolo Model
 
-This project explores training and using a YOLO (You Only Look Once) model for object detection, focusing on classifying facial expressions from a custom dataset. To create a more personalized dataset, I captured and labeled around 1500 images of my own facial expressions using Label Studio. It was more of a personal, self-tailored project rather than something meant for broader use, and it was a great way to learn and get familiar with YOLO in a practical setting. This file will discuss mostly about 'facial expressions', but it can be derived to any other labeling idea.
+This project explores training and using a YOLO (You Only Look Once) model for object detection, focusing on classifying facial expressions from a custom dataset. To create a more personalized dataset, I captured and labeled around 1500 images of my own facial expressions using Label Studio. It was more of a personal, self-tailored project, and it was a great way to learn and get familiar with YOLO in a practical setting. This file will discuss mostly about 'facial expressions', but it can be derived to any other labeling idea.
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -8,7 +8,6 @@ This project explores training and using a YOLO (You Only Look Once) model for o
 - [Project Structure](#project-structure)
 - [Deploying the Model on a PC](#deploying-the-model-on-a-pc)
 - [Inspiration & Future Improvements](#inspiration--future-improvements)
-- [Usage](#usage)
 - [Conclusion](#conclusion)
 - [License](#license)
 
@@ -57,13 +56,25 @@ Click below to open the Colab notebook and start training a YOLO model. This mak
 
 The easiest way to run Ultralytics YOLO models on a PC is using **Anaconda**, which helps set up a virtual Python environment with all necessary dependencies.
 
-### **1. Download and Install Anaconda**
+### 1. Prerequisites
+
+#### **1.1. Verify Python Version**
+
+Ensure you have **Python 3.X** installed. You can check your current Python version with:
+```bash
+python -V
+```
+If you need to install Python, download and install from [python.org](https://www.python.org/downloads/)
+
+#### **1.2. Install Anaconda**
+
 [Download Anaconda](https://anaconda.com/download) and follow the default installation settings.
 
-### **2. Set up a virtual environment**
+
+#### **1.3. Set up a virtual environment**
 Open **Anaconda Prompt** (or a terminal on macOS/Linux) and create a new Python environment:
 ```bash
-conda create --name yolo_env python=3.12 -y
+conda create --name yolo_env python=3.X -y # Replace 3.X with your python version
 conda activate yolo_env
 ```
 
@@ -79,7 +90,7 @@ For NVIDIA GPU users, install the GPU-accelerated version of PyTorch:
 pip install --upgrade torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 ```
 
-### 3. Extract the trained model
+### 2. Extract the trained model
 
 #### Option 1: Download your model and unzip
 Unzip ```my_model.zip``` and **navigate into its folder**:
@@ -97,20 +108,20 @@ If you want to, you may download my face expressions trained model and run it.
 
 You may now proceed to the next step.
 
-### 4. Download and run yolo_detect.py
-#### 4.1. Download the detection script:
+### 3. Download and run yolo_detect.py
+#### 3.1. Download the detection script:
 
 ```bash
 curl -o yolo_detect.py https://raw.githubusercontent.com/Etaizil/Train_Yolo_Model/refs/heads/main/yolo_detect.py
 ```
 
-#### 4.2. Download view_stats.py:
+#### 3.2. Download view_stats.py:
 
 ```bash
 curl -o view_stats.py https://raw.githubusercontent.com/Etaizil/Train_Yolo_Model/refs/heads/main/view_stats.py
 ``` 
 
-#### 4.3. Run inference with a YOLOv8n model on a laptop or USB camera at 1280x720 resolution:
+#### 3.3. Run inference with a YOLOv8n model on a laptop or USB camera at 1280x720 resolution:
 
 ```bash
 python yolo_detect.py --model my_model.pt --source usb0 --resolution 1280x720
@@ -131,9 +142,12 @@ python yolo_detect.py --model my_model.pt --source path/to/image_or_video.mp4
 
 And that's it! Your camera is up and running to detect what it was trained for.
 
-### 5. View Stats
+### 4. View Stats
 
-Run 
+Watch statistics from all sessions combined:
+```bash
+python view_stats.py
+```
 
 ## Inspiration & Future Improvements
 
@@ -142,20 +156,6 @@ While the project is currently a proof-of-concept for myself, there are plenty o
 - **Scaling Up:** Manual labeling of large datasets is time-consuming. Integrating semi-automated labeling tools could make this process more efficient.
 - **Model Enhancements:** I only did a single training run for this project. Further tuning of the YOLO model and experimenting with different architectures could improve detection accuracy.
 - **Extended Datasets:** Combining my custom dataset with pre-existing datasets might boost the model's performance and generalizability.
-
-## Usage
-
-To use the project, follow these steps:
-
-1. **Train the YOLO Model:**
-   - Prepare your dataset by capturing images and labeling them using Label Studio.
-   - Configure and train the YOLO model using your custom dataset.
-
-2. **Run Object Detection:**
-   - Use the `yolo_detect.py` script to perform object detection on your images or videos. The script will display detection results (bounding boxes and labels) and save the detection statistics to `face_expression_stats.csv`. You are more than welcome to take the script and change it for your favor.
-   - Feel free to modify the script to suit your needs.
-3. **Visualize Statistics:**
-   - Run the `view_stats.py` script to generate a visualization from the collected statistics. This will help you analyze the distribution of your facial expressions across sessions.
 
 ## Conclusion
 
