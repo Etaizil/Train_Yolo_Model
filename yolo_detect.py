@@ -116,7 +116,10 @@ elif source_type in ["video", "usb", "laptop"]:
         cap.set(4, resH)
 
 expression_stats = {"Natural": 0, "Happy": 0, "Surprised": 0}
+
+count_frame_skip = 3
 frame_counter = 0
+
 stats_file = "face_expression_stats.csv"
 session_name = input("Enter session name: ").strip()
 
@@ -181,19 +184,19 @@ try:
         if resize and frame is not None:
             frame = cv2.resize(frame, (resW, resH))
 
+        frame_counter += 1
+
         results = model(frame, verbose=False)
         detections = results[0].boxes
-
-        detected_classes = set()
-        for detection in detections:
-            classidx = int(detection.cls.item())
-            classname = labels[classidx]
-            detected_classes.add(classname)
-
-        for detected_class in detected_classes:
-            if detected_class in expression_stats:
-                expression_stats[detected_class] += 1
-
+        if frame_counter % count_frame_skip == 0:
+            detected_classes = set()
+            for detection in detections:
+                classidx = int(detection.cls.item())
+                classname = labels[classidx]
+                detected_classes.add(classname)
+            for detected_class in detected_classes:
+                if detected_class in expression_stats:
+                    expression_stats[detected_class] += 1
         # Draw bounding boxes
         for detection in detections:
             xyxy = detection.xyxy.cpu().numpy().squeeze().astype(int)
