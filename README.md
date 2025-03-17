@@ -126,10 +126,11 @@ curl -o view_stats.py https://raw.githubusercontent.com/Etaizil/Train_Yolo_Model
 
 #### 3.3. Run inference with a YOLO model on a laptop or USB camera at 1280x720 resolution:
 
+Using a webcam:
 ```bash
 python yolo_detect.py --model my_model.pt --source usb0 --resolution 1280x720
 ```
-or:
+Or using a laptop built-in camera if available:
 ```bash
 python yolo_detect.py --model my_model.pt --source laptop0 --resolution 1280x720
 ```
