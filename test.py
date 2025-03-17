@@ -11,7 +11,7 @@ else:
         if not ret:
             break
         cv2.imshow("Video", frame)
-        if cv2.waitKey(50) == ord('q'):
+        if cv2.waitKey(50) == ord("q"):
             break
 
 cap.release()
