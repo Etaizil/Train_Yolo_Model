@@ -2,6 +2,16 @@
 
 This project explores training and using a YOLO (You Only Look Once) model for object detection, focusing on classifying facial expressions from a custom dataset. To create a more personalized dataset, I captured and labeled around 1500 images of my own facial expressions using Label Studio. It was more of a personal, self-tailored project rather than something meant for broader use, and it was a great way to learn and get familiar with YOLO in a practical setting. This file will discuss mostly about 'facial expressions', but it can be derived to any other labeling idea.
 
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Train With Google Colab](#train-with-google-colab)
+- [Project Structure](#project-structure)
+- [Deploying the Model on a PC](#deploying-the-model-on-a-pc)
+- [Inspiration & Future Improvements](#inspiration--future-improvements)
+- [Usage](#usage)
+- [Conclusion](#conclusion)
+- [License](#license)
+
 ## Project Overview
 
 ### 1. Creating Custom Dataset & Manual Labeling
@@ -29,7 +39,7 @@ After training, the model is used to:
 The project includes a visualization component:
 - A script (`view_stats.py`) reads the CSV file and generates a pie chart that shows the distribution of expressions over all sessions.
 
-### **Train With Google Colab**
+## **Train With Google Colab**
 Click below to open the Colab notebook and start training a YOLO model. This makes it easy to upload an image dataset and run a few blocks of code to get started.
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1QEWZK5emoj3fvD9SPrjAeCRPV5COxCy7?usp=sharing)
@@ -151,5 +161,8 @@ To use the project, follow these steps:
 
 This project is a personal, hands-on exploration of training a YOLO model for object detection, with a unique focus on classifying my own facial expressions. Although there is ample room for improvement - the manual approach provided a valuable learning experience and allowed me to tailor the dataset to my specific needs. Whether you're interested in custom model training or simply exploring computer vision techniques, this project offers a practical example of what's possible with dedication and creativity.
 
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ---
