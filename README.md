@@ -17,7 +17,7 @@ This project explores training and using a YOLO (You Only Look Once) model for o
 
 While many pre-labeled datasets are available online, I chose to take my own pictures to create a personalized dataset. I focused on classifying my own facial expressions—such as Natural, Happy, and Surprised—to add a personal touch to the project.  
 - **Manual Labeling:** The manual process, though a bit time-consuming and requiring patience, felt refreshing and allowed me to make the project truly my own. It took a few hours to label all the pictures.
-- **Label Studio:** I used Label Studio for labeling, which provided a flexible interface for annotating my images.
+- **Label Studio:** I used [Label Studio](https://labelstud.io/) for labeling, which provided a flexible interface for annotating my images.
 
 ### 2. YOLO Model Training
 
