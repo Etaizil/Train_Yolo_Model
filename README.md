@@ -130,7 +130,7 @@ or:
 python yolo_detect.py --model my_model.pt --source laptop0 --resolution 1280x720
 ```
 
-* Enter a session name ans press Enter.
+* Enter a session name and press Enter.
 * A window will display a live feed with bounding boxes drawn around detected facial expressions.
 
 Alternatively, to process an image, video, or folder of images, specify the source:
