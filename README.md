@@ -53,8 +53,8 @@ The easiest way to run Ultralytics YOLO models on a PC is using **Anaconda**, wh
 ### **2. Set up a virtual environment**
 Open **Anaconda Prompt** (or a terminal on macOS/Linux) and create a new Python environment:
 ```bash
-conda create --name yolo-env python=3.12 -y
-conda activate yolo-env
+conda create --name yolo_env python=3.12 -y
+conda activate yolo_env
 ```
 
 Then, install Ultralytics:
@@ -70,35 +70,60 @@ pip install --upgrade torch torchvision torchaudio --index-url https://download.
 ```
 
 ### 3. Extract the trained model
-Unzip ```my_model.zip``` and navigate into its folder:
+
+#### Option 1: Download your model and unzip
+Unzip ```my_model.zip``` and **navigate into its folder**:
 ```bash
 cd path/to/folder
 ```
-#### 3.1. Download my model
+#### Option 2: Download my pretrained model
 If you want to, you may download my face expressions trained model and run it.
 
-Simply click ```my_model.pt``` and select 'Download raw file'.
+* First, create a folder for the project
+
+* Simply click ```my_model.pt``` and select 'Download raw file'.
+
+* Move the file into the created folder.
+
+You may now proceed to the next step.
 
 ### 4. Download and run yolo_detect.py
-Download the detection script:
+#### 4.1. Download the detection script:
 
 ```bash
 curl -o yolo_detect.py https://raw.githubusercontent.com/Etaizil/Train_Yolo_Model/refs/heads/main/yolo_detect.py
 ```
 
-Run inference with a YOLOv8n model on a laptop or USB camera at 1280x720 resolution:
+#### 4.2. Download view_stats.py:
 
 ```bash
-python yolo_detect.py --model my_model.pt --source laptop0 --resolution 720x720
+curl -o view_stats.py https://raw.githubusercontent.com/Etaizil/Train_Yolo_Model/refs/heads/main/view_stats.py
+``` 
+
+#### 4.3. Run inference with a YOLOv8n model on a laptop or USB camera at 1280x720 resolution:
+
+```bash
+python yolo_detect.py --model my_model.pt --source usb0 --resolution 1280x720
+```
+or:
+```bash
+python yolo_detect.py --model my_model.pt --source laptop0 --resolution 1280x720
 ```
 
-This will open a window displaying a live feed with bounding boxes drawn around detected facial expressions.
+* Enter a session name ans press Enter.
+* A window will display a live feed with bounding boxes drawn around detected facial expressions.
 
 Alternatively, to process an image, video, or folder of images, specify the source:
 
 ```bash
 python yolo_detect.py --model my_model.pt --source path/to/image_or_video.mp4
 ```
+
+And that's it! Your camera is up and running to detect what it was trained for.
+
+### 5. View Stats
+
+Run 
 
 ## Inspiration & Future Improvements
 
